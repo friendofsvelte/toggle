@@ -45,10 +45,12 @@ Done 🎉, you can now toggle between light and dark mode.
 ## Previews
 
 **System toggle**
-![image](https://github.com/friendofsvelte/toggle/assets/42182303/6b23bd1b-710e-4d86-ab38-cb827cb2505f)
+![system_mode](https://github.com/friendofsvelte/toggle/assets/42182303/d9a4c7a4-7f84-4f02-b2a7-5010067c07b5)
+
 
 **In-app toggle**
-![image](https://github.com/friendofsvelte/toggle/assets/42182303/049d546e-b139-402d-bf0a-78d10d33d339)
+![in_app_mode](https://github.com/friendofsvelte/toggle/assets/42182303/6d8f4862-a971-4c7c-b0a9-a5e9c95ddc5f)
+
 
 ## Custom action
 
