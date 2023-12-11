@@ -2,7 +2,7 @@ import type {Writable} from "svelte/store";
 import {get, writable} from "svelte/store";
 
 
-function metaPerformDarkMode(is_dark_mode_: boolean) {
+export function metaPerformDarkMode(is_dark_mode_: boolean) {
     document.cookie = `appearanceMode=${is_dark_mode_ ? 'dark' : 'light'}; path=/; max-age=31536000`;
     if (is_dark_mode_) {
         document.documentElement.classList.add('dark');
@@ -11,11 +11,7 @@ function metaPerformDarkMode(is_dark_mode_: boolean) {
         document.documentElement.classList.remove('dark');
         document.documentElement.classList.add('light');
     }
-    console.log(`Dark mode is ${is_dark_mode_ ? 'enabled' : 'disabled'}.`);
 }
-
-
-export let isDarkMode: Writable<boolean | null> = writable(null);
 
 
 export function initDarkMode() {
@@ -42,10 +38,11 @@ export function toggleDarkMode() {
     performDarkMode();
 }
 
-
 export function performDarkMode() {
     const is_dark_mode = get(isDarkMode);
     if (is_dark_mode !== null) {
         metaPerformDarkMode(is_dark_mode);
     }
 }
+
+export let isDarkMode: Writable<boolean | null> = writable(null);

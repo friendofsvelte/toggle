@@ -32,10 +32,10 @@ In your `src/hooks.server.ts` file, add the following code:
 
 ```ts
 import {sequence} from "@sveltejs/kit/hooks";
-import handleAppearance from "@friendofsvelte/toggle";
+import server from "@friendofsvelte/toggle";
 
 export const handle = sequence(
-    handleAppearance
+    server
 );
 ```
 

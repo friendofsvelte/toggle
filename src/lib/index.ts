@@ -1,7 +1,8 @@
 import ThemeToggle from "$lib/toggle/ThemeToggle.svelte";
-import handleAppearance from "$lib/toggle/handleAppearance.js";
 
-export default {
-    ThemeToggle,
-    handleAppearance,
-}
+export {
+    isDarkMode, metaPerformDarkMode, toggleDarkMode, performDarkMode, initDarkMode
+} from "$lib/toggle/toggleUtils.js";
+export {handleAppearance} from "$lib/toggle/server.js";
+export {ThemeToggle};
+export default ThemeToggle;

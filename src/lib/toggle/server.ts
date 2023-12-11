@@ -11,6 +11,3 @@ export const handleAppearance: Handle = (async ({event, resolve}) => {
             .replace('%appearanceMode%', appearanceMode)
     });
 });
-
-export default handleAppearance;
-
