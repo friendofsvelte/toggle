@@ -1,0 +1,13 @@
+.dark-mode-button {
+    @apply bg-white dark:bg-stone-800 rounded-xl p-1 shadow-lg
+    h-8 w-8 cursor-pointer transition-transform duration-100
+    hover:scale-110 flex items-center justify-center;
+}
+
+.dark-mode-button:not(.isDarkMode) {
+    @apply focus:text-blue-400 text-blue-900;
+}
+
+.dark-mode-button.isDarkMode {
+    @apply focus:text-yellow-400 text-orange-200;
+}
