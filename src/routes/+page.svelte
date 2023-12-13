@@ -1,8 +1,8 @@
 <script>
-import {ThemeToggle, isDarkMode} from "$lib";
+    import {ThemeToggle, isDarkMode} from "$lib";
+    import "$lib/toggle/styles/Toggle.css";
 </script>
 
 
-<svelte:component this={ThemeToggle} />
-
+<ThemeToggle/>
 Is dark mode: {$isDarkMode}

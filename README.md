@@ -22,21 +22,22 @@ In your `+layout.svelte` or `+page.svelte` file, add the following code:
 
 ```svelte
 <script>
-  import { ThemeToggle } from '@friendofsvelte/toggle';
-  import "@friendofsvelte/toggle/styles/Toggle.css";
+    import {ThemeToggle, isDarkMode} from "@friendofsvelte/toggle";
+    import "@friendofsvelte/toggle/styles/Toggle.css";
 </script>
 
-<ThemeToggle />
+<ThemeToggle/>
+Is dark mode: {$isDarkMode}
 ```
 
 In your `src/hooks.server.ts` file, add the following code:
 
 ```ts
 import {sequence} from "@sveltejs/kit/hooks";
-import server from "@friendofsvelte/toggle";
+import {handleAppearance} from "@friendofsvelte/toggle";
 
 export const handle = sequence(
-    server
+        handleAppearance
 );
 ```
 
@@ -47,10 +48,8 @@ Done 🎉, you can now toggle between light and dark mode.
 **System toggle**
 ![system_mode](https://github.com/friendofsvelte/toggle/assets/42182303/d9a4c7a4-7f84-4f02-b2a7-5010067c07b5)
 
-
 **In-app toggle**
 ![in_app_mode](https://github.com/friendofsvelte/toggle/assets/42182303/6d8f4862-a971-4c7c-b0a9-a5e9c95ddc5f)
-
 
 ## Custom action
 
@@ -78,7 +77,8 @@ About Friend Of Svelte
 
 ![Friend Of Svelte Logo](https://avatars.githubusercontent.com/u/143795012?s=200&v=4)
 
-[Friend Of Svelte](https://github.com/friendofsvelte) is a community driven project to help Svelte developers to find and
+[Friend Of Svelte](https://github.com/friendofsvelte) is a community driven project to help Svelte developers to find
+and
 develop awesome Svelte resources.
 
 If you like this project, you can be one of the friend by contributing to the project. Memberships are open for
