@@ -1,6 +1,6 @@
 {
 	"name": "@friendofsvelte/toggle",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"keywords": [
 		"svelte",
 		"text editor",
@@ -70,6 +70,5 @@
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
-	"dependencies": {
-	}
+	"dependencies": {}
 }
