@@ -1,6 +1,6 @@
 {
 	"name": "@friendofsvelte/toggle",
-	"version": "0.0.2-up-doc.0",
+	"version": "0.0.2-sv.5",
 	"keywords": [
 		"svelte",
 		"text editor",
@@ -42,7 +42,7 @@
 		"!dist/**/*.spec.*"
 	],
 	"peerDependencies": {
-		"svelte": "^4.0.0"
+		"svelte": "^5.0.0-next.1"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
