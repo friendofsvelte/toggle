@@ -1,25 +1,21 @@
 <script lang="ts">
-    import {onMount} from "svelte";
     import {scale} from "svelte/transition";
     import Moon from "$lib/toggle/icons/Moon.svelte";
     import Sun from "$lib/toggle/icons/Sun.svelte";
-    import {isDarkMode, toggleDarkMode, initDarkMode} from "$lib/toggle/toggleUtils";
+    import {appearance} from "$lib/toggle/toggle.svelte";
+    import TrackAppearance from "$lib/toggle/TrackAppearance.svelte";
 
-
-    onMount(() => {
-        initDarkMode();
-    });
-    export let className: string = '';
+    let {class: className = ''} = $props();
 </script>
 
-
-{#if $isDarkMode !== null}
+<TrackAppearance/>
+{#if appearance.dark !== null}
     <button
             class="dark-mode-button {className}"
-            class:isDarkMode={$isDarkMode}
+            class:isDarkMode={appearance.dark}
             in:scale
-            on:click={toggleDarkMode}>
-        {#if $isDarkMode}
+            onclick={()=>appearance.dark=!appearance.dark}>
+        {#if appearance.dark}
             <Moon/>
         {:else}
             <Sun/>

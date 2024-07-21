@@ -22,12 +22,12 @@ In your `+layout.svelte` or `+page.svelte` file, add the following code:
 
 ```svelte
 <script>
-    import {ThemeToggle, isDarkMode} from "@friendofsvelte/toggle";
+    import {ThemeToggle, appearance} from "@friendofsvelte/toggle";
     import "@friendofsvelte/toggle/styles/Toggle.css";
 </script>
 
 <ThemeToggle/>
-Is dark mode: {$isDarkMode}
+Is dark mode: {appearance.dark}
 ```
 
 In your `src/hooks.server.ts` file, add the following code:
@@ -37,7 +37,7 @@ import {sequence} from "@sveltejs/kit/hooks";
 import {handleAppearance} from "@friendofsvelte/toggle";
 
 export const handle = sequence(
-        handleAppearance
+    handleAppearance
 );
 ```
 
@@ -58,21 +58,45 @@ the follow utility function to achieve this:
 
 ```ts
 import {
-    isDarkMode, metaPerformDarkMode, toggleDarkMode, performDarkMode, initDarkMode
+    apperance
 } from "@friendofsvelte/toggle";
 ````
 
-- `isDarkMode` is a boolean writable store that indicates if the appearance
-  is dark or not.
-- `metaPerformDarkMode` that accepts a boolean value to set the appearance.
-- `toggleDarkMode` uses the `isDarkMode` store to toggle the appearance.
-- `performDarkMode` uses the `metaPerformDarkMode` and passes the value of
-  `isDarkMode` to it.
-- `initDarkMode` is a function that initializes the `isDarkMode` store with
-  the value of the `prefers-color-scheme` media query or the `appearanceMode` cookie,
-  and initialize a listener.
+- `appearance` is a class object that stores `dark` boolean state on it.
+- setting `appearance.dark = false` with automatically update the UI to light mode.
+- `ThemeToggle` is the default component that uses `appearance` to toggle the theme.
 
-About Friend Of Svelte
+```svelte
+<script lang="ts">
+    import {scale} from "svelte/transition";
+    import Moon from "$lib/toggle/icons/Moon.svelte";
+    import Sun from "$lib/toggle/icons/Sun.svelte";
+    import {appearance} from "$lib/toggle/toggle.svelte";
+    import TrackAppearance from "$lib/toggle/TrackAppearance.svelte";
+
+    let {class: className = ''} = $props();
+</script>
+
+<TrackAppearance/>
+{#if appearance.dark !== null}
+    <button
+            class="dark-mode-button {className}"
+            class:isDarkMode={appearance.dark}
+            in:scale
+            onclick={()=>appearance.dark=!appearance.dark}>
+        {#if appearance.dark}
+            <Moon/>
+        {:else}
+            <Sun/>
+        {/if}
+    </button>
+{:else}
+    <div class="dark-mode-button"/>
+{/if}
+```
+
+# About Friend Of Svelte
+
 ----------------------
 
 ![Friend Of Svelte Logo](https://avatars.githubusercontent.com/u/143795012?s=200&v=4)

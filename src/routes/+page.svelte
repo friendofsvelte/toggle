@@ -1,8 +1,8 @@
 <script>
-    import {ThemeToggle, isDarkMode} from "$lib";
+    import {ThemeToggle, appearance} from "$lib";
     import "$lib/toggle/styles/Toggle.css";
 </script>
 
 
 <ThemeToggle/>
-Is dark mode: {$isDarkMode}
+Is dark mode: {appearance.dark}
