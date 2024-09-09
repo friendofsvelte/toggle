@@ -18,7 +18,7 @@ npm i @friendofsvelte/toggle
 
 ## Usage
 
-In your `+layout.svelte` or `+page.svelte` file, add the following code:
+In your `src/+layout.svelte` (recommended) or `+page.svelte` file, add the following code:
 
 ```svelte
 <script>
@@ -39,6 +39,12 @@ import {handleAppearance} from "@friendofsvelte/toggle";
 export const handle = sequence(
     handleAppearance
 );
+```
+
+Add `class="%appearanceMode%"` in your `app.html` file:
+
+```html
+<html lang="en" class="%appearanceMode%">
 ```
 
 Done 🎉, you can now toggle between light and dark mode.
