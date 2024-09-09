@@ -1,79 +1,87 @@
 {
-	"name": "@friendofsvelte/toggle",
-	"version": "0.0.2-svelte.5",
-	"keywords": [
-		"svelte",
-		"text editor",
-		"rich text",
-		"svelte kit"
-	],
-	"author": "bishwas bhandari",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/friendofsvelte/toggle/issues"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/friendofsvelte/toggle.git"
-	},
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build && npm run package",
-		"preview": "vite preview",
-		"package": "svelte-kit sync && svelte-package && publint",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write .",
-		"prepareLibCss": "postcss --dir ./dist/toggle/styles --config ./postcss.config.js ./dist/toggle/styles/*.css",
-		"packageLib": "npm run package && npm run prepareLibCss",
-		"prepublishOnly": "npm run packageLib"
-	},
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"svelte": "./dist/index.js"
-		},
-		"./styles/*.css": "./dist/toggle/styles/*.css"
-	},
-	"files": [
-		"dist",
-		"!dist/**/*.test.*",
-		"!dist/**/*.spec.*"
-	],
-	"peerDependencies": {
-		"svelte": "^5.0.0-next.1"
-	},
-	"devDependencies": {
-		"@sveltejs/package": "^2.0.0",
-		"publint": "^0.1.9",
-		"postcss": "^8.4.24",
-		"postcss-cli": "^10.1.0",
-		"postcss-load-config": "^4.0.1",
-		"@sveltejs/adapter-auto": "^3.0.0",
-		"@sveltejs/kit": "^2.0.0",
-		"@sveltejs/vite-plugin-svelte": "^3.0.0",
-		"@types/eslint": "^8.56.7",
-		"eslint": "^9.0.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.36.0",
-		"globals": "^15.0.0",
-		"prettier": "^3.1.1",
-		"prettier-plugin-svelte": "^3.1.2",
-		"svelte": "5.0.0-next.178",
-		"svelte-check": "^3.6.0",
-		"tslib": "^2.4.1",
-		"typescript": "^5.0.0",
-		"typescript-eslint": "^8.0.0-alpha.20",
-		"vite": "^5.0.3",
-		"@tailwindcss/typography": "^0.5.13",
-		"autoprefixer": "^10.4.19",
-		"postcss": "^8.4.38",
-		"prettier-plugin-tailwindcss": "^0.6.4",
-		"tailwindcss": "^3.4.4"
-	},
-	"svelte": "./dist/index.js",
-	"types": "./dist/index.d.ts",
-	"type": "module",
-	"dependencies": {}
+  "name": "@friendofsvelte/toggle",
+  "version": "0.0.2-svelte.5.docup",
+  "keywords": [
+    "svelte",
+    "text editor",
+    "rich text",
+    "svelte kit"
+  ],
+  "author": "bishwas bhandari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/friendofsvelte/toggle/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/friendofsvelte/toggle.git"
+  },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build && npm run package",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "prepareLibCss": "postcss --dir ./dist/toggle/styles --config ./postcss.config.js ./dist/toggle/styles/*.css",
+    "packageLib": "npm run package && npm run prepareLibCss",
+    "prepublishOnly": "npm run packageLib"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    },
+    "./styles/*.css": "./dist/toggle/styles/*.css"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "peerDependencies": {
+    "svelte": "^5.0.0-next.1"
+  },
+  "devDependencies": {
+    "@sveltejs/package": "^2.0.0",
+    "publint": "^0.1.9",
+    "postcss": "^8.4.24",
+    "postcss-cli": "^10.1.0",
+    "postcss-load-config": "^4.0.1",
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "@types/eslint": "^8.56.7",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-svelte": "^2.36.0",
+    "globals": "^15.0.0",
+    "prettier": "^3.1.1",
+    "prettier-plugin-svelte": "^3.1.2",
+    "svelte": "5.0.0-next.178",
+    "svelte-check": "^3.6.0",
+    "tslib": "^2.4.1",
+    "typescript": "^5.0.0",
+    "typescript-eslint": "^8.0.0-alpha.20",
+    "vite": "^5.0.3",
+    "@tailwindcss/typography": "^0.5.13",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier-plugin-tailwindcss": "^0.6.4",
+    "tailwindcss": "^3.4.4"
+  },
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "dependencies": {},
+  "overrides": {
+    "@sveltejs/package": {
+      "svelte": "^5.0.0-next.1"
+    },
+    "eslint-plugin-svelte": {
+      "svelte": "^5.0.0-next.1"
+    }
+  }
 }
