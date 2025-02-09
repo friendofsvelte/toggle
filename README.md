@@ -101,6 +101,13 @@ import {
 {/if}
 ```
 
+Now, add the following code in your tailwind `app.css`:
+```css
+@variant dark (&:where(.dark, .dark *));
+```
+
+this works for Tailwind V4 users.
+
 # About Friend Of Svelte
 
 ----------------------
