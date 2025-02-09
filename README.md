@@ -77,8 +77,8 @@ import {
     import {scale} from "svelte/transition";
     import Moon from "$lib/toggle/icons/Moon.svelte";
     import Sun from "$lib/toggle/icons/Sun.svelte";
-    import {appearance} from "$lib/toggle/toggle.svelte";
-    import TrackAppearance from "$lib/toggle/TrackAppearance.svelte";
+    import { appearance } from "@friendofsvelte/toggle";
+    import TrackAppearance from '@friendofsvelte/toggle';
 
     let {class: className = ''} = $props();
 </script>
