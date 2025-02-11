@@ -3,21 +3,28 @@
     import {onMount} from "svelte";
 
     const init = () => {
-        if (document.documentElement.classList.contains('dark')) {
-            appearance.dark = true;
-        } else if (document.documentElement.classList.contains('light')) {
-            appearance.dark = false;
-        }
+      const cookieValue = document.cookie
+        .split('; ')
+        .find(row => row.startsWith('appearanceMode='))
+        ?.split('=')[1];
 
+      if (cookieValue) {
+        appearance.dark = cookieValue === 'dark';
+      }
+      else if (document.documentElement.classList.contains('dark')) {
+        appearance.dark = true;
+      } else if (document.documentElement.classList.contains('light')) {
+        appearance.dark = false;
+      } else {
         const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+        appearance.dark = prefersDarkMode.matches;
+      }
 
-        if (appearance.dark === null) {
-            appearance.dark = prefersDarkMode.matches;
-        }
-
-        prefersDarkMode.addEventListener('change', (e) => {
-            appearance.dark = e.matches;
-        });
+      // Add listener for system preference changes
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
+      prefersDarkMode.addEventListener('change', (e) => {
+        appearance.dark = e.matches;
+      });
     }
     const track = () => {
         if (appearance.dark != null) {
